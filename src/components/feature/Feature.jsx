@@ -5,7 +5,7 @@ import icon4 from "../../assets/4 1.png"
 
 const Feature = () => {
     return (
-        <div className="flex justify-center items-center gap-5 lg:gap-10 p-5  bg-[#ECEAE3] ">
+        <div className="grid grid-cols-2 md:flex justify-center items-center gap-5 lg:gap-10 p-5  bg-[#ECEAE3] ">
             <div className="text-black flex space-y-3 flex-col ">
                 <img className="w-12" src={icon1} alt="" />
                 <h1 className=" font-bold">Awesome Aroma</h1>
