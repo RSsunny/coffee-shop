@@ -5,8 +5,8 @@ const Navbar = () => {
     return (
         <div className="bg-cover bg-center flex justify-center py-2" style={{backgroundImage:`url("${bgNav}")`}}>
             <div className="flex gap-2 items-center ">
-                <img src={logo} alt="" />
-                <h1 className="text-4xl font-semibold">Espresso Emporium</h1>
+                <img className="w-12" src={logo} alt="" />
+                <h1 className="text-2xl font-semibold">Espresso Emporium</h1>
             </div>
         </div>
     );
