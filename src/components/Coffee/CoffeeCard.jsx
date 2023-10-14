@@ -1,9 +1,9 @@
-import { useState } from "react";
+
 import { AiOutlineEye,AiOutlineDelete } from "react-icons/ai";
 import { BsPencil } from "react-icons/bs";
 import { Link } from "react-router-dom";
-
-
+import Swal from 'sweetalert2'
+import PropTypes from 'prop-types';
 
 const CoffeeCard = ({card,coffee,setCoffee}) => {
    
@@ -11,16 +11,53 @@ const CoffeeCard = ({card,coffee,setCoffee}) => {
     const {_id,chef,name,photo,taste}=card
 
     const handleDelet=_id=>{
-        fetch(`http://localhost:5000/coffees/${_id}`,{
-            method:"Delete"
-        })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            const mathchCoffee=coffee.filter(data=>data._id !==_id)
-            setCoffee(mathchCoffee)
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success',
+              cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          })
+          
+          swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+              swalWithBootstrapButtons.fire(
+                'Deleted!',
+                'Your Coffee has been deleted.',
+                'success'
+              )
 
-        })
+              fetch(`http://localhost:5000/coffees/${_id}`,{
+                method:"Delete"
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+                const mathchCoffee=coffee.filter(data=>data._id !==_id)
+                setCoffee(mathchCoffee)
+    
+            })
+
+
+            } else if (
+              /* Read more about handling dismissals below */
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              swalWithBootstrapButtons.fire(
+                'Cancelled',
+                'Your imaginary file is safe :)',
+                'error'
+              )
+            }
+          })
     }
 
 
@@ -46,3 +83,9 @@ const CoffeeCard = ({card,coffee,setCoffee}) => {
 };
 
 export default CoffeeCard;
+
+CoffeeCard.propTypes={
+    card:PropTypes.object.isRequired,
+    coffee:PropTypes.array.isRequired,
+    setCoffee:PropTypes.func.isRequired
+}

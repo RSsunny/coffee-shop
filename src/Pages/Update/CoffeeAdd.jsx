@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import bgImage from "../../assets/11 3.png"
+import Swal from "sweetalert2";
 
 const CoffeeAdd = () => {
     const handleUpdate=e=>{
@@ -24,6 +25,14 @@ const CoffeeAdd = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'add items',
+                showConfirmButton: false,
+                timer: 1500
+              })
+              form.reset()
             
         })
 

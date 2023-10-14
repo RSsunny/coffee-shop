@@ -2,6 +2,7 @@
 
 import { Link, useLoaderData } from "react-router-dom";
 import bgImage from "../../assets/11 3.png"
+import Swal from "sweetalert2";
 
 const CoffeeUpdate = () => {
     const coffee=useLoaderData()
@@ -27,6 +28,13 @@ const CoffeeUpdate = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Update successfully',
+                showConfirmButton: false,
+                timer: 1500
+              })
             
         })
 

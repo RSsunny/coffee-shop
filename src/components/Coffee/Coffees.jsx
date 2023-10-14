@@ -1,5 +1,5 @@
 import CoffeeCard from "./coffeeCard";
-
+import PropTypes from 'prop-types';
 const Coffees = ({coffees,setCoffee}) => {
     
 
@@ -13,3 +13,8 @@ const Coffees = ({coffees,setCoffee}) => {
 };
 
 export default Coffees;
+
+Coffees.propTypes={
+    coffees:PropTypes.array.isRequired,
+    setCoffee:PropTypes.func.isRequired
+}
