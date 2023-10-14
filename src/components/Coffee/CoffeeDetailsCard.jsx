@@ -3,7 +3,8 @@ import bgDetails from "../../assets/11 3.png"
 
 const CoffeeDetailsCard = () => {
     const coffeeDetails=useLoaderData()
-    const {chef,name,photo,taste}=coffeeDetails
+    console.log(coffeeDetails);
+    const {chef,name,photo,taste,details,category}=coffeeDetails
    
     return (
         <div className="bg-cover bg-center py-20" style={{backgroundImage:`url("${bgDetails}")`}}>
@@ -19,6 +20,8 @@ const CoffeeDetailsCard = () => {
                     <h1 className="text-base font-bold mb-1">Name: {name}</h1>
                     <h1 className="text-base font-bold mb-1">Chef: {chef}</h1>
                     <h1 className="text-base font-bold mb-1"> Taste: {taste}</h1>
+                    <h1 className="text-base font-bold mb-1"> Categry: {category}</h1>
+                    <h1 className="text-base font-bold mb-1"> Details: {details}</h1>
                 </div>
             </div>
         </div>

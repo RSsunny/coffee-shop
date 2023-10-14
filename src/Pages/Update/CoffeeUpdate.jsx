@@ -16,14 +16,13 @@ const CoffeeUpdate = () => {
         const category=form.category.value 
         const details=form.details.value 
         const photo=form.photo.value 
-        const user={name,chef,supplier,taste,category,details,photo}
-        console.log(user);
-        fetch('http://localhost:5000/coffees',{
-            method:"POST",
+        const updareCoffee={name,chef,supplier,taste,category,details,photo}
+        fetch(`http://localhost:5000/coffees/${coffee._id}`,{
+            method:"PUT",
             headers:{
                 "content-type":"application/json"
             },
-            body:JSON.stringify(user)
+            body:JSON.stringify(updareCoffee)
         })
         .then(res=>res.json())
         .then(data=>{
