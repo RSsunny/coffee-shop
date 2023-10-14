@@ -2,13 +2,38 @@ import { Link } from "react-router-dom";
 import bgImage from "../../assets/11 3.png"
 
 const Update = () => {
+    const handleUpdate=e=>{
+        e.preventDefault()
+        const form =e.target
+        const name=form.name.value 
+        const chef=form.chef.value 
+        const supplier=form.supplier.value 
+        const taste=form.taste.value 
+        const category=form.category.value 
+        const details=form.details.value 
+        const photo=form.photo.value 
+        const user={name,chef,supplier,taste,category,details,photo}
+        console.log(user);
+        fetch('http://localhost:5000/coffees',{
+            method:"POST",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(user)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+        })
+
+    }
     return (
         <div className="bg-cover bg-center" style={{backgroundImage:`url("${bgImage}")`}}>
         <div className="max-w-7xl mx-auto px-5 text-black "  >
         <div className="py-5 md:py-10">
             <Link to={'/'} className="text-xl text-black font-bold px-4 py-2 hover:bg-[#D2B48C] rounded-md" >Back to home</Link>
         </div>
-        <form className="bg-[#F4F3F0] md:p-16 p-5 mb-10 md:mb-20">
+        <form onSubmit={handleUpdate} className="bg-[#F4F3F0] md:p-16 p-5 mb-10 md:mb-20">
             <div className="text-center">
                 <h1 className="text-3xl font-bold">Add New Coffee</h1>
                 <p className="lg:w-[700px] mx-auto my-5 text-xs md:text-base">It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
