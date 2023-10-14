@@ -20,7 +20,7 @@ const Home = () => {
         <Feature></Feature>
         <Title title={title1}></Title>
         <div className="text-center my-5">
-        <Link to={'/newCoffee'} className="text-center px-4 py-2 bg-[#E3B577] hover:bg-transparent hover:border hover:text-black font-bold">Add Coffee</Link>
+        <Link to={'/newCoffee'} className="text-center px-4 py-2 bg-[#E3B577] hover:bg-transparent hover:border hover:text-black font-rancho text-xl">Add Coffee</Link>
         </div>
         <Coffees coffees={coffee} setCoffee={setCoffee}></Coffees>
         

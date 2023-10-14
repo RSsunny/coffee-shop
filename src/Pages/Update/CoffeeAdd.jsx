@@ -45,7 +45,7 @@ const CoffeeAdd = () => {
         </div>
         <form onSubmit={handleUpdate} className="bg-[#F4F3F0] md:p-16 p-5 mb-10 md:mb-20">
             <div className="text-center">
-                <h1 className="text-3xl font-bold">Add New Coffee</h1>
+                <h1 className="text-3xl md:text-5xl font-rancho">Add New Coffee</h1>
                 <p className="lg:w-[700px] mx-auto my-5 text-xs md:text-base">It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
             </div>
             <div className="md:flex gap-5 justify-center items-center w-full ">
@@ -87,7 +87,7 @@ const CoffeeAdd = () => {
                     <input className="w-full p-2 my-4 outline-none" type="text" name="photo" id="" placeholder="Enter photo URL"/>
                 </label>  
             </div>
-            <div className="bg-[#D2B48C] text-center py-2 font-bold cursor-pointer mt-5">
+            <div className="bg-[#D2B48C] text-center py-2 font-rancho cursor-pointer mt-5">
                 <input className="cursor-pointer" type="submit" value="Add Coffee" />
             </div>
 
