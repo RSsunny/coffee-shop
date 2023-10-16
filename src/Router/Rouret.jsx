@@ -6,6 +6,11 @@ import Home from "../Pages/Home/Home";
 import CoffeeDetailsCard from "../components/Coffee/CoffeeDetailsCard";
 import CoffeeAdd from "../Pages/Update/CoffeeAdd";
 import CoffeeUpdate from "../Pages/Update/CoffeeUpdate";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Login/Register";
+import Users from "../Pages/User/Users";
+import UserProfile from "../Pages/User/UserProfile";
+import UserUpdate from "../Pages/User/UserUpdate";
 
 const Rouret = createBrowserRouter([
     {
@@ -31,6 +36,30 @@ const Rouret = createBrowserRouter([
                 path:"/update/:id",
                 element:<CoffeeUpdate></CoffeeUpdate>,
                 loader:({params})=>fetch(`http://localhost:5000/coffees/${params.id}`)
+            },
+            {
+                path:'/login',
+                element:<Login></Login>
+            },
+            {
+                path:'/register',
+                element:<Register></Register>
+            },
+            {
+                path:'/users',
+                element:<Users></Users>,
+                loader:()=>fetch('http://localhost:5000/users')
+            },
+            {
+                path:'/users/:id',
+                loader:({params})=>fetch(`http://localhost:5000/users/${params.id}`),
+                element:<UserProfile></UserProfile>
+
+            },
+            {
+                path:'/updateUsers/:id',
+                loader:({params})=>fetch(`http://localhost:5000/users/${params.id}`),
+                element:<UserUpdate></UserUpdate>
             }
         ]
     }

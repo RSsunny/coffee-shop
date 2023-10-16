@@ -40,8 +40,8 @@ const CoffeeAdd = () => {
     return (
         <div className="bg-cover bg-center" style={{backgroundImage:`url("${bgImage}")`}}>
         <div className="max-w-7xl mx-auto px-5 text-black "  >
-        <div className="py-5 md:py-10">
-            <Link to={'/'} className="text-xl text-black font-bold px-4 py-2 hover:bg-[#D2B48C] rounded-md" >Back to home</Link>
+        <div className="py-5 md:py-10 font-rancho">
+            <Link to={'/'} className="text-3xl text-black  px-4 py-2 hover:bg-[#D2B48C] rounded-md " >Back to home</Link>
         </div>
         <form onSubmit={handleUpdate} className="bg-[#F4F3F0] md:p-16 p-5 mb-10 md:mb-20">
             <div className="text-center">
