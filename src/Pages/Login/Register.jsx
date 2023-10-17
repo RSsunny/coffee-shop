@@ -21,7 +21,7 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         fetch(
-          "https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/users",
+          "https://coffee-shop-server-2-q6b79vhaz-rabius-sunnys-projects.vercel.app/users",
           {
             method: "POST",
             headers: {

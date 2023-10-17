@@ -16,7 +16,7 @@ const CoffeeAdd = () => {
     const user = { name, chef, supplier, taste, category, details, photo };
     console.log(user);
     fetch(
-      "https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/coffees",
+      "https://coffee-shop-server-2-q6b79vhaz-rabius-sunnys-projects.vercel.app/coffees",
       {
         method: "POST",
         headers: {

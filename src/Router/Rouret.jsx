@@ -23,7 +23,7 @@ const Rouret = createBrowserRouter([
         element: <Home></Home>,
         loader: () =>
           fetch(
-            "https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/coffees"
+            "https://coffee-shop-server-2-q6b79vhaz-rabius-sunnys-projects.vercel.app/coffees"
           ),
       },
       {
@@ -35,7 +35,7 @@ const Rouret = createBrowserRouter([
         element: <CoffeeDetailsCard></CoffeeDetailsCard>,
         loader: ({ params }) =>
           fetch(
-            `https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/coffees/${params.id}`
+            `https://coffee-shop-server-2-q6b79vhaz-rabius-sunnys-projects.vercel.app/coffees/${params.id}`
           ),
       },
       {
@@ -43,7 +43,7 @@ const Rouret = createBrowserRouter([
         element: <CoffeeUpdate></CoffeeUpdate>,
         loader: ({ params }) =>
           fetch(
-            `https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/coffees/${params.id}`
+            `https://coffee-shop-server-2-q6b79vhaz-rabius-sunnys-projects.vercel.app/coffees/${params.id}`
           ),
       },
       {
@@ -59,14 +59,14 @@ const Rouret = createBrowserRouter([
         element: <Users></Users>,
         loader: () =>
           fetch(
-            "https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/users"
+            "https://coffee-shop-server-2-q6b79vhaz-rabius-sunnys-projects.vercel.app/users"
           ),
       },
       {
         path: "/users/:id",
         loader: ({ params }) =>
           fetch(
-            `https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/users/${params.id}`
+            `https://coffee-shop-server-2-q6b79vhaz-rabius-sunnys-projects.vercel.app/users/${params.id}`
           ),
         element: <UserProfile></UserProfile>,
       },
@@ -74,7 +74,7 @@ const Rouret = createBrowserRouter([
         path: "/updateUsers/:id",
         loader: ({ params }) =>
           fetch(
-            `https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/users/${params.id}`
+            `https://coffee-shop-server-2-q6b79vhaz-rabius-sunnys-projects.vercel.app/users/${params.id}`
           ),
         element: <UserUpdate></UserUpdate>,
       },
