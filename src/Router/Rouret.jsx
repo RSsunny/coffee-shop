@@ -13,57 +13,73 @@ import UserProfile from "../Pages/User/UserProfile";
 import UserUpdate from "../Pages/User/UserUpdate";
 
 const Rouret = createBrowserRouter([
-    {
-        path:'/',
-        element:<Mainlayout></Mainlayout>,
-        errorElement:<Error></Error>,
-        children:[
-            {
-                path:"/",
-                element:<Home></Home>,
-                loader:()=>fetch('http://localhost:5000/coffees')
-            },
-            {
-                path:"/newCoffee",
-                element:<CoffeeAdd></CoffeeAdd>
-            },
-            {
-                path:`/coffees/:id`,
-                element:<CoffeeDetailsCard></CoffeeDetailsCard>,
-                loader:({params})=>fetch(`http://localhost:5000/coffees/${params.id}`)
-            },
-            {
-                path:"/update/:id",
-                element:<CoffeeUpdate></CoffeeUpdate>,
-                loader:({params})=>fetch(`http://localhost:5000/coffees/${params.id}`)
-            },
-            {
-                path:'/login',
-                element:<Login></Login>
-            },
-            {
-                path:'/register',
-                element:<Register></Register>
-            },
-            {
-                path:'/users',
-                element:<Users></Users>,
-                loader:()=>fetch('http://localhost:5000/users')
-            },
-            {
-                path:'/users/:id',
-                loader:({params})=>fetch(`http://localhost:5000/users/${params.id}`),
-                element:<UserProfile></UserProfile>
-
-            },
-            {
-                path:'/updateUsers/:id',
-                loader:({params})=>fetch(`http://localhost:5000/users/${params.id}`),
-                element:<UserUpdate></UserUpdate>
-            }
-        ]
-    }
-])
-
+  {
+    path: "/",
+    element: <Mainlayout></Mainlayout>,
+    errorElement: <Error></Error>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+        loader: () =>
+          fetch(
+            "https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/coffees"
+          ),
+      },
+      {
+        path: "/newCoffee",
+        element: <CoffeeAdd></CoffeeAdd>,
+      },
+      {
+        path: `/coffees/:id`,
+        element: <CoffeeDetailsCard></CoffeeDetailsCard>,
+        loader: ({ params }) =>
+          fetch(
+            `https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/coffees/${params.id}`
+          ),
+      },
+      {
+        path: "/update/:id",
+        element: <CoffeeUpdate></CoffeeUpdate>,
+        loader: ({ params }) =>
+          fetch(
+            `https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/coffees/${params.id}`
+          ),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/users",
+        element: <Users></Users>,
+        loader: () =>
+          fetch(
+            "https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/users"
+          ),
+      },
+      {
+        path: "/users/:id",
+        loader: ({ params }) =>
+          fetch(
+            `https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/users/${params.id}`
+          ),
+        element: <UserProfile></UserProfile>,
+      },
+      {
+        path: "/updateUsers/:id",
+        loader: ({ params }) =>
+          fetch(
+            `https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/users/${params.id}`
+          ),
+        element: <UserUpdate></UserUpdate>,
+      },
+    ],
+  },
+]);
 
 export default Rouret;

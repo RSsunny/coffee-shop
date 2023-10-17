@@ -27,13 +27,16 @@ const UserUpdate = () => {
       photo,
       country,
     };
-    fetch(`http://localhost:5000/users/${_id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
+    fetch(
+      `https://coffee-shop-server-2-2cz1hiwi4-rabius-sunnys-projects.vercel.app/users/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
